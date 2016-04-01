@@ -3,10 +3,10 @@
 @import 'libs/mixins';
 @import 'libs/skel';
 @import 'font-awesome.min.css';
-@import url('http://fonts.googleapis.com/css?family=Roboto:400,700');
+@import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900');
 
 /*
-	Eventually by HTML5 UP
+	Phantom by HTML5 UP
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
@@ -17,31 +17,50 @@
 		medium: '(max-width: 980px)',
 		small: '(max-width: 736px)',
 		xsmall: '(max-width: 480px)',
-		xxsmall: '(max-width: 360px)',
-		short: '(max-height: 640px)'
+		xxsmall: '(max-width: 360px)'
 	));
 
 	@include skel-layout((
 		reset: 'full',
-		boxModel: 'border'
+		boxModel: 'border',
+		grid: (
+			gutters: 2em
+		),
+		breakpoints: (
+			medium: (
+				grid: (
+					gutters: 1.5em
+				)
+			),
+			small: (
+				grid: (
+					gutters: 1em
+				)
+			)
+		)
 	));
 
 // Base.
 
 	@import 'base/page';
-	@import 'base/bg';
 	@import 'base/typography';
 
-// Components.
+// Component.
 
 	@import 'components/section';
 	@import 'components/icon';
 	@import 'components/list';
 	@import 'components/form';
+	@import 'components/box';
+	@import 'components/image';
+	@import 'components/table';
 	@import 'components/button';
+	@import 'components/tiles';
 
 // Layout.
 
 	@import 'layout/header';
-	@import 'layout/signup-form';
+	@import 'layout/menu';
+	@import 'layout/main';
 	@import 'layout/footer';
+	@import 'layout/wrapper';
